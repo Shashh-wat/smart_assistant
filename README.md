@@ -60,9 +60,12 @@ What this does:
 Standalone interactive mode
 
 python query.py --interactive
+
 Single query mode
 
 python query.py --query "What feedback did Shashwat get?"
+
+
 Custom data file
 
 python query.py --data data/processed/all_meetings.json --interactive 
