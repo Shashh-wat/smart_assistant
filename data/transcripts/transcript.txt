@@ -1,0 +1,124 @@
+Skip to main content
+Connect your Zoom account so Notetaker can join meetings you host
+Get Pro For Free
+Basic
+0 of 300 monthly mins usedGet Otter Pro
+
+Rohit Agarwal
+Aug 28 at 3:01 pm
+29 min
+Shared with: madhurya.mallikarjun@pepsales.ai, Shashwat Singh
+Summary
+Transcript
+Keywords
+
+AIML intern, transformer architectures, pharmacokinetics, ML prediction, RAG pipeline, vectors vs. tensors, chat GPT, self-attention, activation functions, backpropagation, NLP techniques, named entity recognition, facial detection, fast API, flask.
+Speakers
+
+Shashwat (58%), Rohit (42%)
+This is Good afternoon, Sir, I'm
+you Actually,
+visible, yes,
+any strategy, Good
+afternoon, sir. First of all, sir, I'm shashwash for the third year here at biatic sunh in C code. I do AIML and with abackground in fast API for back end, of course. And so some of my work experiences include research internships at IITPhD, Iit Monday flight, startup also in the industry. Sorry.
+Besides my research experience, I've also worked in the industry before, companies such as Capgemini and helivers, andright now I'm working a full time job at this place called East Atlas, and so I basically my main area of research, and mymain domain of work is llms and everything involving transformer architectures.
+Okay? I can see we have done some research.
+What was your
+research? Yes, sir, So sir, I'll start with IIT Bhu. In IIT PhD, sir, my research was based on pharmacokinetics. Basically,we have a couple of properties known as admit, basically, adsorption, distribution, metabolism, etc, which are describedacross various sets of drugs which have certain effects in medicinal remedies. So instead of vivo vector tests in the lab,which are both computationally expensive as well as unethical, because, of course, there's a live testing we do ML topredict those drug target affinity using traditional algorithms such as xgb Random Forest support vector classifier andMLP. So sir, that's basically what my problem statement was for one of my research papers at iitbr. And sir,
+did you write any papers on this?
+Yes, sir, my paper is currently under review by IEEE access is where we submitted it. Okay,
+that's pretty cool. I mean, okay, then we have data analyst, okay, patients, they have mentioned drag a lot in your resume.Can you tell me what rag is,
+sir. Rag is basically a method for llms to process documents. So do you want me to go into the mathematical detail, or doyou want me to give you a brief architecture of how it works?
+Explain me how it works? You don't need that much.
+So basically, sir, context team, taking the document, converting that into embeddings, taking the query then performingreally is like matching algorithms as bm 25 dB, retrieve them and then feed that into the LLM as a combined prompt Tobetter get answers on that particular document is basically what a rack pipeline is. Now, the search techniques can be verydifferent. It can be keyword based, it can be cross encoder based, things such as fast and obviously the choice of DB canbe different, pine cone, Chroma, etc,
+right? So you mentioned vectors. Can you tell me what vectors are?
+So vector is basically just a tuple, and basically it can be in space, depending upon our requirement. It's a bunch offractional values stored together,
+right? And how is it different from tensors?
+So tensors are, I believe, the main difference between vectors and tensors is just how immutable they are. And tensorssaid, they are much more used for, in my experience, that much more used for traditional ml and DL tasks, things such asregression, classification and somewhere, which involves a lot of reshaping them and flattening them and etc,
+okay, but I mean vectors are also a type of tensor, right? No, no, see vectors. As you said, vectors is like an array ofnumbers, right? So say we have a sentence, and we convert it into numbers and we store it in an array that, that is vector.It's a two dimensional right? Now, if we, if we convert it into now matrix that becomes the that becomes a 3d vector,right? Three? Sorry, 3d tensor, right? So vectors are basically 2d tensors, right? But, or 1d is it 1d or 2d
+so vector in the most classical sense of the word, it's, it's 1d
+Correct, correct. Okay, yeah, that works. So vector is a type of tensor. That is I wanted to say, Okay, fine, okay, I'll ask youone question. Can you explain me, what happens in the background when you say, write something in the chat box,chatgpt, query box when you write something, what happens in the background? How is chat GPT able to, you know,generate the new content. Like, explain me the steps. Like, step one, step two,
+like, sir. So sir. First of all, we just take a tokenizer, and depending on whether we're using something like sentence piece,whether we want to do character by character or sentence piece. How it works is, sir, that it will take random inputs likeit'll suppose the sentence is like the cat jumps over the lazy brown fox. It can be like the cat, or it can be like the CA andetc, etc. That's why we split them up, convert them into embeddings. Then Sir, where we really get under the hood withchat GPT is what we implemented in not we implemented but it has been implemented for in this paper called retention.Is All You Need so. So basically, what happens in that paper is that we have a transformer architecture with encoder anddecoder blocks. Now, how is it any different from RNNs and CNNs? And how is it that transformers came to replacetraditional RNNs, as we know today. It's because of a mechanism called attention, which is basically key into key valuepairs and then combining them with values, and then soft maxing it, and then having feed forward layers as well as Skipconnections and things such as multi head, self attention cross multi head, cross attention, etc. There's a wholearchitecture for it, which then is basically just a probabilistic prediction of what the next text is going to be based on thetext or the prompt that we've entered. Even the LLM doesn't know what it's going to say right next to it before it says it.So that's the basic overview of how, what under the hood,
+charging, and you mentioned self attention in Transformers and the paper, attention is all you need, a very famous paper.Okay. Anyways, can you tell me what self attention is? In a nutshell,
+self attention is basically when you take the matrix product of a particular say sentence piece on itself to better understandits relevant context and cross attention is when you compare, sorry sir, when you compare the semantic meanings betweentwo different chunks of a given say paragraph,
+okay, I get that, but I will explain this to a layman, like, if someone is just asking, what? How self attention helps atransformer. How will you explain it? Just take an example and experience, right? Sir? Um,
+so it's hard to convert it into a layman's perspective, because I know the math. I understand how the attention matrix isand what the confidence scores are. Okay, so basically providing better context about itself is the job of self expression.And compare that with basically a comparison between semantic meanings of two different parts of the same say,contextual paragraph would become cross section. Okay? Some matrix product, sir. So we're putting them into numbersmatrix product.
+I'll ask you some now, AIML questions, okay, can you tell me what what activation functions are? So activation
+functions are basically functions like sigma, really, tanh, etc, which come after the input and bias, get the output, and thenwe convert them into activation function for various problems, such as normalization for better fitting them to a use caseand etc.
+And can you tell me if Okay, so say we are trying to mimic a Zor gate using a percept from,
+sorry, it is in a perception. Yeah.
+Let me complete the question and now what, what would you use like, which type of activation function would you use?Would you use a linear activation function, like, you know, we have step function or linear function, or will you use thenon linear function such as ReLU or leaky ReLU. What would we use? So I
+believe I would use an activation function which either takes it to zero or one, which sigmoid can be a good choice for it,as it's a sort function which it's
+with it. So why not a step function, like, are you familiar with the Step Up function? So if you have g of x, it will convertit into either one zero or minus one, right?
+Yes, sir.
+So why don't we? But that is linear. So because Zor
+defining a particular use case, it only gives a particular output, because it's a dash b plus a b dash, which is zero or one. SoI was talking in that particular context only. So
+is that the only is that, the only reason you would use a non linear activation function? So
+it would depend upon my use case, sir. It would depend a lot upon what I'm trying to do with the data, and like theproblem statement would have to make sense as to why I'm using that particular activation
+function. What happens is we cannot mimic or get using a linear activation functions right, and there is a particular reasonfor that. The answer, you said, sigmoid is correct. Absolutely, that's fine. We always use sigmoid function. If not sigmoid,we use really only. But I wanted, I wanted to know if you understand why we are using the non linear activationfunctions. Because this the thing you said, that to convert into zero and one, that other functions can also do linearfunctions, right? That can also do that. But then why are we using non linear activation functions? Is what I wanted to ask.So
+so it's okay, nobody can you. Can you tell me in a nutshell what that propagation is?
+Sorry, sir. So back propagation, the back propagation is basically taking the logits, which are the output of a particularneural network operation, and converting them back into what they were before the operation.
+Okay, and do you know what Madeline's are? Sorry, sir. Madeline, can you spell it, M, A, D, A, l, I, N,
+E, yes, sir, I, so can you give me the context in which it is being used?
+It's a type for artificial neural network. So Are are you? Are you aware with feed forward neural networks? Yes, sir, right?That is a type of that only, but we have multiple hidden layers, and that is that, that is where it gets its name. So it'smultiple Adeline, you know, Adeline,
+so Adeline I've heard before, yes, right? So
+if we have multiple, like, if you're grouping the other lines, such so that we have multiple hidden layers, and it becomes aMadeline right this back propagation algorithm that I was talking about, I was actually wanting to hear about how it isused in altering the weights. So say you are training a model, and say you are using a Madeline percept, I mean Madelinenetwork and and say you want to update the weights for each output, right?
+Yes, sir. So
+that in that case, we use back propagation. Okay, that works. Okay. How do we use vectors in order to show relationshipbetween any like, why do we use vectors? What is the use?
+So vector use cases make a very good sort of smooth pipeline to perform operations, such as, say, if you're doing keywordretrieval, right, sir. So if you're doing dense vector search, then operations such as cosine similarity and operations such asif we switch to a very traditional ml user case, which is L value to regular regularization and everything which involvesweights and the normalization of them, then they make a very good use case for those mathematical operations.Applications,
+okay, and is that it like, what are other use like, say, say, you, you will be used. You will be using your APIs and stuff,right? So in prod, what matters most is storage, memory and resource utilization, right? So, how, how does vector help inall this so instead of storing
+like raw, unrelated data which is more complex, such as images and everything, vector makes it a lot less computationallytaxing on the system, whether it be persistent storage, whether we're using Something like Redis for caching, say, serverdoing rag operation. And then we don't just want to ask one question on it, we want to build something like a land graphagent, which will provide faster inference on more and more questions as we ask it. So we can use Redis for caching forthat. And the less complex the data, the faster the retrieval will be, and therefore, in real time production environment, itwill
+Okay. That works. Okay. Let's come back to AI. Okay. Can you tell me some prompting techniques
+so we can have one shot prompting, multi shot prompting. We can also this is something called chain of thought, wherethe open AI handbook recently released a proper structure for a prompt which goes like a what exactly is it that you wantGPT to do? Be the context of it, see the guardrailing of it, and D,
+it's like a recipe book, right? Yes. So what I like to do is, I like to add a compare chain of thoughts to a recipe book. YouYou do like, step one, you do this. Step two, you do this. Step three, you do this, right? And, okay, can you give me anexample of, say, zero shot prompting?
+So if you want to have one monolithic chain, for example, sir, I did that recently, just yesterday. So my IEEE paper wasunder review, right? So what they want us to implement is sharp metrics or Explainable AI into our already pre existing,regular random forest, next TV scripts. So, sir, what I did was I a provided the manuscript, B provided the feedback, sothat forms context. Then I provided what the guard railing. Sorry,
+I didn't I think you didn't get my question. I asked, Can you give an example of zero shot prompting?
+So basically like monolithic prompting, right? So
+I know zero shot,
+so my understanding of zero shot is basically like monolithizing The way you prompt, and instead of having it carriedacross through the context and
+making it more zero short, one shot, two shot, all these are like you're giving some context to the any LLM, say, chat, voteor any LLM before you give them the task. If you're saying zero chart, that means you're not giving it any context. I'llgive an example. The prompt would look something like draw a cat. That will be a zero shot prompting because you'renot giving any prior context to it. Okay, right? One short prompting would be, hey, this is the cat I drew. And you give animage and say, Now you draw a cat, now you have given some context, and that becomes one shot prompting,
+right, sir. Okay,
+what you were talking about, monolith and guardrails, that's that's all, okay? But, I mean, those are two different things.Okay, excellent, okay, okay, let me see if we have more questions. Facial detection system, okay, NLP, let's come to NLP,can you okay? Do you know any NLP techniques? I send you names on
+so some of them include TF IDF, which is basically taking a how rare word appears in a document in B, just how manytimes it appears, just how many times it appears, and the second is just, basically just a parcel to the document, just to gethow many times a particular word appears, which is bag of words. So apart from that, there's different combinations ofthe two, and those are some of the tokenization techniques I know.
+Yeah, information.
+So you mentioned the facial detection, right, sir, I have worked on projects like that before,
+yeah, and I was checking out your resume. So you have mentioned that we're just seeing what all you have done. So yeah.I mean, have you heard of any? Sorry, sir, and
+so named entity recognition, yes, sir, right.
+So can you tell me one small use case where this can be useful?
+So for example, sir, right now there's this app, so I believe it's called order. It just asked me to sign in, right, sir. So if we'rerecording this interview, which we are, I believe, then we have an audio log of it. Now, if we run a model which willbasically take that audio, convert that into a summary, and then have it converted into an even more summarized versionby basically taking all the keywords, all the important topics that were touched upon that would be called named entityrecognition, so taking the full context of it and then summarizing it by using keywords that would be used. Otter works onthat?
+Exactly? Otter also uses it, right? So, you know, last last week, we had an issue where we wanted to improve ourqualities, so we looked into ner and now we can use it also came, okay? So you are coming from Kanpur, is it? Yes, sir,which please,
+sir, Kanpur. I come from this place called sham Nagar,
+like I'm drama now. So that is why, yes,
+sir. Now I have been to once or twice I haven't.
+Okay? I think that wraps it all. Yeah, I mean that that's it. Also, do you have any questions from you? I,
+sir, my first question would be, sir, feedback. Where do you think I need to improve
+your the advanced part, like, you know, the the part after the basic prompting and all that is really good your maths. I hopeyour match is strong, because we were talking about maths a lot. So the match is also very good, but maybe some basics abit more. Because if that that is more strong than I mean the if the condition is strong, then later you can more improve,right? So that is one and rest. Rest is all good. Yeah, it's pretty good. You have papers as well, and that's your question. Doyou have, like, you know, experience with writing APIs and stuff,
+so just fast API for most of my ml systems. Yeah, I
+get that. But we don't use fast API here, because it is not only an AI based system, right? We have other stuff as well. Sothey have, they are using REST APIs to the normal ones, plus. So flask also have
+experience in
+Okay? And is it that you only know AIML, or do you have idea about back end also,
+sir, basically, I do back end in flask and fast, depending upon just how latency intensive, my use case.
+My question being, do you know if I give you a task to build a feature, end to end? So that is not only AIML, right. Youhave to do the backend part answer, Yes, sir. Will you be able to see that?
+Yes, sir. I have built scalable services before, sir. Like this rack systems itself, I have built scalable systems and I'vedeployed them on the cloud, built back end in fast API or flask, depending upon however, the use cases say, if it's for amore sort of lenient latency, lenient project which, okay, can afford to have some latency, then I'll be going with Flask. Ifit's for something which needs to be very fast, I'll be going with fast that's what I've done so far. Obviously.
+Okay, I think it was pretty good. We'll be giving you an assignment. Yes, I want to see how you title that question so wehave a problem statement. I'll give you that. I'll email it to you by the by end of day, and I'll give you once, the one day,okay? And you have to, you have to, you know, come up with a solution and implement it and share it. Okay,
+right, sir, right, sir.
+Try to be innovative. Because, you know, that will be the most, I mean, an interview was nice, but that will also be veryimportant, okay,
+okay, so can I have a little bit of a sort of pre preparation of what it's going to be about?
+No, no, that's a subtitle. Okay, so I'll send you all the details. Will be in the assignment. If you have any questions, you canreach out. Okay, okay, okay,
+so what's the deadline on this?
+Yeah, so whenever I send you the mail, 24 hours after that,
+okay, sir. And does it have to be deployed, or do I have to make a
+yeah, you will, you will make a GitHub repo, and in the MD file or README file, you have to tell me the steps exactlyhow I will be able to run it in my local Got it. Okay, try to be innovative.
+Right sir right sir,
+not make it a simple API context. And that, I want some math some vectors, something. Yes. Okay.
+Thank you sir. Thank you.
+How accurate was this transcription?
+
+00:0029:45
+AI ChatOutlineComments
+Ask AI anything about this conversation
+
+or chat with your teammates
+
+﻿
+
