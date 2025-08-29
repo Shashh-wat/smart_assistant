@@ -24,20 +24,20 @@ curl -fsSL https://ollama.ai/install.sh | sh.
 
 # Pull different models for comparison
 
-ollama pull llama3.2:latest.
+ollama pull llama3.2:latest
 
-ollama pull llama3.1:8b.
+ollama pull llama3.1:8b
 
-ollama pull mistral:7b.
+ollama pull mistral:7b
 
 
-ollama pull qwen2.5:7b.
+ollama pull qwen2.5:7b
 
 
 # Start Ollama server (keep running in terminal)
 
 
-ollama serve.
+ollama serve
 
 
 (to keep it running is not mandatory , however curl testing it once is advised)
