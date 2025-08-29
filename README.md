@@ -15,23 +15,31 @@ Step 2: Local Ollama Installation
 bash# Install Ollama (Mac/Linux)
 curl -fsSL https://ollama.ai/install.sh | sh
 
+# Install Ollama (Mac/Linux)
+curl -fsSL https://ollama.ai/install.sh | sh
+
 # Pull different models for comparison
-ollama pull llama3.2:latest      # Primary model (recommended)
-ollama pull llama3.1:8b          # Alternative for speed comparison  
-ollama pull mistral:7b           # Different model family
-ollama pull qwen2.5:7b           # Another alternative
+ollama pull llama3.2:latest      
+ollama pull llama3.1:8b         
+ollama pull mistral:7b           
+ollama pull qwen2.5:7b          
+
+# Start Ollama server (keep running in terminal)
+ollama serve
 
 # Start Ollama server (keep running in terminal)
 ollama serve
 Step 3: Add Your Transcript Data
-bash# Place your .txt transcript files in data/transcripts/
+Place your .txt transcript files in data/transcripts/
 # Example file structure:
 # data/transcripts/
-# ├── interview_shashwat.txt
-# ├── sales_call_client_a.txt
-# └── feedback_session_q4.txt
+ ├── interview_shashwat.txt
+ ├── sales_call_client_a.txt
+ └── feedback_session_q4.txt
+
+ 
 Step 4: Run Preprocessing Pipeline
-bash# Basic preprocessing with default model
+Basic preprocessing with default model
 python preprocess.py
 
 # Preprocessing with specific model
@@ -45,8 +53,11 @@ python preprocess.py --input data/transcripts/ --output data/processed/
 # - Extracts semantic data using LLM (speakers, topics, feedback, assignments)
 # - Calculates mathematical metadata (speaker ratios, content density, engagement peaks)
 # - Saves structured JSON to data/processed/all_meetings.json
+
+
+
 Step 5: Query Your Data
-bash# Web interface (recommended)
+Web interface (recommended)
 streamlit run app.py
 
 # Standalone interactive mode
@@ -74,23 +85,29 @@ pythonMODEL_CONFIGS = {
         "description": "Local Ollama Mistral 7B"
     }
 }
+
+
+
 Running Preprocessing with Different Models
-bash# Process with Llama (most accurate semantic extraction)
+ Process with Llama (most accurate semantic extraction)
 python preprocess.py --model ollama_llama
 
-# Process with Mistral (faster, more concise)
+ Process with Mistral (faster, more concise)
 python preprocess.py --model ollama_mistral
 
 # Compare results by switching models in Streamlit interface
 Expected Model Differences
 Llama 3.2: More detailed semantic extraction, better context understanding, nuanced feedback analysis
 Mistral 7B: Faster processing, more concise responses, different interpretation style
+
+
 Design Approach: Solving the Context Window Challenge
 The Central Problem
 Sales transcripts contain 10,000+ characters but LLMs have context limits. How do you provide accurate answers without losing critical information?
 Our Mathematical Solution
 Thought Process Behind Mathematical Analysis
 The mathematical utilities solve a fundamental information retrieval problem. Rather than randomly selecting transcript segments or truncating content, mathematical analysis provides objective signals about content importance and relevance.
+
 Mathematical Metadata Components
 1. Speaker Pattern Analysis (_analyze_speakers)
 python# Problem: "Who was the main participant?" requires scanning entire transcript
@@ -103,6 +120,7 @@ def _analyze_speakers(self, text):
         "speaking_ratios": {"Shashwat": 0.58, "Rohit": 0.42},
         "dominant_speaker": "Shashwat"
     }
+    
 2. Content Density Analysis (_analyze_content_density)
 python# Problem: Which segments contain business-critical information?
 # Solution: Term frequency analysis for different content types
@@ -114,6 +132,9 @@ def _analyze_content_density(self, text):
         "financial_density": 0.05,    # 5% financial content
         "question_density": 0.08      # 8% questions (engagement indicator)
     }
+
+
+    
 3. Engagement Peak Detection (_analyze_conversation_flow)
 python# Problem: Where are the most important discussion moments?
 # Solution: Mathematical engagement scoring algorithm
@@ -127,6 +148,8 @@ def _analyze_conversation_flow(self, text):
         "peak_moments": [45, 122, 189],  # Line numbers of high engagement
         "conversation_energy": 2.4        # Overall interaction intensity
     }
+
+
 4. Topic Importance Weighting (_calculate_topic_importance)
 python# Problem: All extracted topics aren't equally important for queries
 # Solution: Mathematical importance scoring
@@ -161,6 +184,8 @@ pythondef _classify_query(self, query: str):
     # entity_focused: "budget", "technical", "objections" 
     # aggregate: "all", "common", "overall", "summary"
 Each classification triggers different context selection strategies optimized for that query type.
+
+
 Project Structure
 sales-insight-bot/
 ├── app.py                    # Streamlit web interface
@@ -175,6 +200,7 @@ sales-insight-bot/
 └── data/
     ├── transcripts/         # Raw .txt transcript files
     └── processed/           # Generated JSON files
+    
 Demo Queries & Sample Outputs
 1. Speaker Analysis
 Query: "Who were the speakers and how much did each person talk?"
