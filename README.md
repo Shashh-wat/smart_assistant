@@ -1,4 +1,11 @@
-Sales Insight Bot A purely local LLM-powered system for analyzing sales call transcripts and answering questions through an intelligent chat interface. Uses Ollama for local inference with structured data extraction and mathematical analysis to provide accurate, contextual responses without any external APIs. Complete Local Setup Guide Step 1: Environment Setup bash# Clone repository git clone https://github.com/Shashh-wat/smart_assistant
+Sales Insight Bot: A purely local LLM-powered system for analyzing sales call transcripts and answering questions through an intelligent chat interface. Uses Ollama for local inference with structured data extraction and mathematical analysis to provide accurate, contextual responses without any external APIs. 
+
+
+# Complete Local Setup Guide 
+ # Clone repository 
+ 
+ 
+ git clone https://github.com/Shashh-wat/smart_assistant
 
 # Install Python dependencies
 
@@ -31,17 +38,32 @@ Start Ollama server (keep running in terminal)
 
 ollama serve 
 
+
+(to keep it running is not mandatory , however curl testing it once is advised)
+
+(curl http://localhost:11434/api/tags)
+
+
+
 # Step 3: Add Your Transcript Data Place your .txt transcript files in data/transcripts/
 
 Example file structure:
 
 data/transcripts/
 
-├── interview_shashwat.txt 
-├── sales_call_client_a.txt 
-└── feedback_session_q4.txt
+├── interview_shashwat.txt.
 
-# Step 4: Run Preprocessing Pipeline Basic preprocessing with default model python preprocess.py
+├── sales_call_client_a.txt.
+
+└── feedback_session_q4.txt.
+
+# Step 4: Run Preprocessing Pipeline 
+
+Basic preprocessing with default model 
+
+python preprocess.py
+
+
 Preprocessing with specific model
 
 python preprocess.py --model ollama_mistral
