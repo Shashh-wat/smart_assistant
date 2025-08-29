@@ -1,22 +1,22 @@
 Sales Insight Bot A purely local LLM-powered system for analyzing sales call transcripts and answering questions through an intelligent chat interface. Uses Ollama for local inference with structured data extraction and mathematical analysis to provide accurate, contextual responses without any external APIs. Complete Local Setup Guide Step 1: Environment Setup bash# Clone repository git clone https://github.com/Shashh-wat/smart_assistant
 
-#Install Python dependencies
+# Install Python dependencies
 
 pip install streamlit requests scikit-learn numpy pandas
 
 
-#Create data directories
+# Create data directories
 
 mkdir -p data/transcripts data/processed Step 2: Local Ollama Installation bash# Install Ollama (Mac/Linux) curl -fsSL https://ollama.ai/install.sh | sh
 
 
-#Install Ollama (Mac/Linux)
+# Install Ollama (Mac/Linux)
 
 curl -fsSL https://ollama.ai/install.sh | sh
 
 
 
-#Pull different models for comparison
+# Pull different models for comparison
 
 ollama pull llama3.2:latest
 ollama pull llama3.1:8b
@@ -24,14 +24,14 @@ ollama pull mistral:7b
 ollama pull qwen2.5:7b
 
 
-#Start Ollama server (keep running in terminal)
+# Start Ollama server (keep running in terminal)
 
 ollama serve
 Start Ollama server (keep running in terminal)
 
 ollama serve 
 
-#Step 3: Add Your Transcript Data Place your .txt transcript files in data/transcripts/
+# Step 3: Add Your Transcript Data Place your .txt transcript files in data/transcripts/
 
 Example file structure:
 
@@ -41,12 +41,12 @@ data/transcripts/
 ├── sales_call_client_a.txt 
 └── feedback_session_q4.txt
 
-#Step 4: Run Preprocessing Pipeline Basic preprocessing with default model python preprocess.py
+# Step 4: Run Preprocessing Pipeline Basic preprocessing with default model python preprocess.py
 Preprocessing with specific model
 
 python preprocess.py --model ollama_mistral
 
-#Custom input/output directories
+# Custom input/output directories
 
 python preprocess.py --input data/transcripts/ --output data/processed/
 
@@ -56,7 +56,7 @@ What this does:
 - Calculates mathematical metadata (speaker ratios, content density, engagement peaks)
 - Saves structured JSON to data/processed/all_meetings.json
 
-#Step 5: Query Your Data Web interface (recommended) streamlit run app.py
+# Step 5: Query Your Data Web interface (recommended) streamlit run app.py
 Standalone interactive mode
 
 python query.py --interactive
@@ -67,12 +67,12 @@ Custom data file
 
 python query.py --data data/processed/all_meetings.json --interactive Model Switching & Result Variations Configuring Different Models Edit config.py to experiment with models: pythonMODEL_CONFIGS = { "ollama_llama": { "type": "ollama", "model": "llama3.2:latest", "url": "http://localhost:11434", "description": "Local Ollama Llama 3.2" }, "ollama_mistral": { "type": "ollama", "model": "mistral:7b", "url": "http://localhost:11434", "description": "Local Ollama Mistral 7B" } }
 
-#Running Preprocessing with Different Models Process with Llama (most accurate semantic extraction) python preprocess.py --model ollama_llama
+# Running Preprocessing with Different Models Process with Llama (most accurate semantic extraction) python preprocess.py --model ollama_llama
 
 Process with Mistral (faster, more concise) python preprocess.py --model ollama_mistral
 Compare results by switching models in Streamlit interface
 
-#Expected Model Differences 
+# Expected Model Differences 
 
 Llama 3.2: More detailed semantic extraction, better context understanding, nuanced feedback analysis 
 
