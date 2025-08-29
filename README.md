@@ -88,61 +88,65 @@ Mathematical Metadata Components
 
     Speaker Pattern Analysis (_analyze_speakers) python# Problem: "Who was the main participant?" requires scanning entire transcript
 
-Solution: Mathematical speaking ratio calculation
+# Solution: Mathematical speaking ratio calculation
 
 def _analyze_speakers(self, text):
 return { "speaking_ratios": {"Shashwat": 0.58, "Rohit": 0.42}, "dominant_speaker": "Shashwat" }
-# Uses regex patterns to detect speaker transitions
-# Calculates word counts per speaker across conversation 
-# Provides precise participation metrics return { "speaking_ratios": {"Shashwat": 0.58, "Rohit": 0.42}, "dominant_speaker": "Shashwat" }
 
-    Content Density Analysis (_analyze_content_density) python# Problem: Which segments contain business-critical information?
 
-Solution: Term frequency analysis for different content types
+-Uses regex patterns to detect speaker transitions
+- Calculates word counts per speaker across conversation 
+- Provides precise participation metrics return { "speaking_ratios": {"Shashwat": 0.58, "Rohit": 0.42}, "dominant_speaker": "Shashwat" }
 
-def _analyze_content_density(self, text):  # Scans for technical terms, financial mentions, questions # Calculates density ratios to identify content-rich segments return 
-{ "technical_density": 0.12,   # 12% technical terms 
-"financial_density": 0.05,     # 5% financial content 
-"question_density":0.08}      # 8% questions (engagement indicator) 
+ # Content Density Analysis (_analyze_content_density)
+ 
+ -Problem: Which segments contain business-critical information?
+
+# Solution: Term frequency analysis for different content types
+
+def _analyze_content_density(self, text):  
+{ "technical_density": 0.12,   
+"financial_density": 0.05,    
+"question_density":0.08}      
 
     Engagement Peak Detection (_analyze_conversation_flow) python# Problem: Where are the most important discussion moments?
 
-Solution: Mathematical engagement scoring algorithm
+# Solution: Mathematical engagement scoring algorithm
 
-def _analyze_conversation_flow(self, text): # Calculates engagement scores based on: 
-# - Response length (longer = more engaged)
-# - Question frequency (questions = interaction) 
-# - Technical term density (complexity = importance) 
-# - Financial mentions (budget = business critical) 
+def _analyze_conversation_flow(self, text): 
+- Calculates engagement scores based on: 
+- Response length (longer = more engaged)
+- Question frequency (questions = interaction) 
+- Technical term density (complexity = importance) 
+- Financial mentions (budget = business critical) 
 
-return { "peak_moments": [45, 122, 189],     # Line numbers of high engagement 
-"conversation_energy": 2.4}      # Overall interaction intensity 
+return { "peak_moments": [45, 122, 189],"conversation_energy": 2.4}      
 
     Topic Importance Weighting (_calculate_topic_importance) python# Problem: All extracted topics aren't equally important for queries
 
-#Solution: Mathematical importance scoring
+# Solution: Mathematical importance scoring
 
-def _calculate_topic_importance(self, semantic_data): # Weights based on frequency, diversity, content length 
-# Guides context selection during query processing 
-return { "feedback_given": 0.85,  # High weight - always include
-"technical_topics": 0.67,         # Medium weight - include if space 
-"casual_chat": 0.12}              # Low weight - exclude when tight 
+def _calculate_topic_importance(self, semantic_data): 
+**  Guides context selection during query processing ** 
 
-#Why Mathematical Metadata Enhances Sales Use Cases Context Selection Intelligence:
+return { "feedback_given": 0.85,  
+"technical_topics": 0.67,          
+"casual_chat": 0.12}              
 
-When user asks "What feedback was given?", the system uses importance weights to prioritize feedback-related content over casual conversation. Speaker-Aware Responses: Mathematical speaker analysis enables queries like "Who dominated the conversation?" without manually scanning transcripts. Content Quality Assessment: Density metrics help identify transcript segments with the highest business value (technical discussions, financial negotiations, objection handling). 
+# Why Mathematical Metadata Enhances Sales Use Cases Context Selection Intelligence:
 
-Engagement-Driven Context: Peak detection ensures LLM receives context from the most meaningful conversation moments, not random segments. Query Processing Strategy Meeting-Specific Queries 
+-When user asks "What feedback was given?", the system uses importance weights to prioritize feedback-related content over casual conversation.
+-Speaker-Aware Responses: Mathematical speaker analysis enables queries like "Who dominated the conversation?" without manually scanning transcripts. 
 
-Example: "What happened in meeting 2?" Strategy: Load complete semantic + mathematical context for target meeting Context Fed to LLM: Full meeting data with mathematical patterns for enhanced understanding Meeting-Agnostic Queries Example: "What feedback was given across all calls?" Strategy: Aggregate feedback data using importance weights across all meetings 
+### Content Quality Assessment: Density metrics help identify transcript segments with the highest business value (technical discussions, financial negotiations, objection handling). 
 
+-Engagement-Driven Context: Peak detection ensures LLM receives context from the most meaningful conversation moments, not random segments. Query Processing Strategy Meeting-Specific Queries 
 
-#Context Fed to LLM: Consolidated feedback summaries with mathematical validation Query Classification System pythondef _classify_query(self, query: str): 
-# feedback_focused: "feedback", "performance", 
-"evaluation" # meeting_specific: "meeting 1", "call 2", specific identifiers 
-# entity_focused: "budget", "technical", "objections" 
-# aggregate: "all", "common", "overall", "summary"
-Each classification triggers different context selection strategies optimized for that query type.
+-Example: "What happened in meeting 2?" 
+-Strategy: Load complete semantic + mathematical context for target meeting Context Fed to LLM: Full meeting data with mathematical patterns for enhanced understanding Meeting-Agnostic Queries 
+-Example: "What feedback was given across all calls?"
+-Strategy: Aggregate feedback data using importance weights across all meetings 
+
 
 Project Structure 
 sales-insight-bot/ 
@@ -159,7 +163,7 @@ sales-insight-bot/
 ├── transcripts/ # Raw .txt transcript files 
 └── processed/ # Generated JSON files
 
-Demo Queries & Sample Outputs
+# Demo Queries & Sample Outputs
 
     Speaker Analysis Query: "Who were the speakers and how much did each person talk?" Output: Speaker participation analysis:
 
