@@ -84,42 +84,6 @@ Llama 3.2: More detailed semantic extraction, better context understanding, nuan
 Mistral 7B: Faster processing, more concise responses, different interpretation style
 
 
-# Demo Queries & Sample Outputs
-
-    Speaker Analysis Query: "Who were the speakers and how much did each person talk?" Output: Speaker participation analysis:
-
-    Shashwat: 58% speaking time (dominant speaker)
-    Rohit: 42% speaking time
-
-Mathematical analysis shows 127 speaking turns for Shashwat and 89 for Rohit, indicating interactive dialogue format typical of technical interviews. 2. Feedback Extraction Query: "What specific feedback was given to Shashwat?" Output: Feedback summary for Shashwat:
-
-    Performance: "pretty good" overall assessment
-    Strengths: Strong mathematical and analytical skills
-    Areas for improvement: "improve on basics" in foundational concepts
-    Assignment: GitHub repository creation, 24-hour deadline, emphasis on innovation
-
-The mathematical importance weighting identified this feedback as high-priority content (0.85 importance score). 3. Technical Content Analysis Query: "What technical topics were discussed?" Output: Technical discussion analysis:
-
-    Core topics: Transformer architectures, neural networks, API integration
-    Technical density: 12% of conversation content (above average)
-    Peak technical engagement: Lines 45-67, 122-145
-    Research focus: Recent papers in NLP and computer vision
-
-Mathematical clustering identified 3 distinct technical topic groups with transformer architectures having highest importance score. 4. Assignment Details Query: "What assignment was given?" Output: Assignment extracted from high-engagement conversation segment:
-
-    Deliverable: GitHub repository demonstrating technical capabilities
-    Timeline: 24 hours from meeting conclusion
-    Requirements: Innovation and practical application of discussed concepts
-    Context: Performance evaluation follow-up
-
-Speaker analysis confirms assignment was given during peak engagement period (conversation energy: 2.4/3.0). 5. Cross-Meeting Summary Query: "Summarize all meetings comprehensively" Output: Comprehensive analysis across all processed meetings:
-
-    Total meetings: 1 technical interview
-    Participants: Shashwat (58% speaking), Rohit (42% speaking)
-    Primary focus: AI/ML technical evaluation with feedback delivery
-    Key outcomes: Performance assessment, skill evaluation, practical assignment
-    Technical depth: High (12% technical density, multiple AI/ML concepts)
-    Business impact: Candidate assessment with actionable development path Technical Benefits
 
 100% Local Processing: Complete privacy, no data transmission Mathematical Intelligence: Quantitative analysis guides optimal context selection Model Flexibility: Easy switching between Ollama models for different needs Sales-Optimized: Designed specifically for sales meeting analysis patterns Token Efficiency: Fits relevant context within LLM limits without information loss
 
