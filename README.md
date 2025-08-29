@@ -65,11 +65,16 @@ Single query mode
 python query.py --query "What feedback did Shashwat get?"
 Custom data file
 
-python query.py --data data/processed/all_meetings.json --interactive Model Switching & Result Variations Configuring Different Models Edit config.py to experiment with models: pythonMODEL_CONFIGS = { "ollama_llama": { "type": "ollama", "model": "llama3.2:latest", "url": "http://localhost:11434", "description": "Local Ollama Llama 3.2" }, "ollama_mistral": { "type": "ollama", "model": "mistral:7b", "url": "http://localhost:11434", "description": "Local Ollama Mistral 7B" } }
+python query.py --data data/processed/all_meetings.json --interactive 
+
+## Model Switching & Result Variations Configuring Different Models Edit config.py to experiment with models:
+
+MODEL_CONFIGS = { "ollama_llama": { "type": "ollama", "model": "llama3.2:latest", "url": "http://localhost:11434", "description": "Local Ollama Llama 3.2" }, "ollama_mistral": { "type": "ollama", "model": "mistral:7b", "url": "http://localhost:11434", "description": "Local Ollama Mistral 7B" } }
 
 # Running Preprocessing with Different Models Process with Llama (most accurate semantic extraction) python preprocess.py --model ollama_llama
 
 Process with Mistral (faster, more concise) python preprocess.py --model ollama_mistral
+
 Compare results by switching models in Streamlit interface
 
 # Expected Model Differences 
