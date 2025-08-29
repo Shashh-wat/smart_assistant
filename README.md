@@ -85,10 +85,14 @@ Mistral 7B: Faster processing, more concise responses, different interpretation 
 
 
 
-100% Local Processing: Complete privacy, no data transmission 
-Mathematical Intelligence: Quantitative analysis guides optimal context selection Model 
-Flexibility: Easy switching between Ollama models for different needs 
-Sales-Optimized: Designed specifically for sales meeting analysis patterns 
+100% Local Processing: Complete privacy, no data transmission.
+
+Mathematical Intelligence: Quantitative analysis guides optimal context selection Model.
+
+Flexibility: Easy switching between Ollama models for different needs.
+
+Sales-Optimized: Designed specifically for sales meeting analysis patterns.
+
 Token Efficiency: Fits relevant context within LLM limits without information loss
 
 # Troubleshooting
