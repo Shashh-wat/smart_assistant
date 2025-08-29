@@ -85,9 +85,23 @@ Mistral 7B: Faster processing, more concise responses, different interpretation 
 
 
 
-100% Local Processing: Complete privacy, no data transmission Mathematical Intelligence: Quantitative analysis guides optimal context selection Model Flexibility: Easy switching between Ollama models for different needs Sales-Optimized: Designed specifically for sales meeting analysis patterns Token Efficiency: Fits relevant context within LLM limits without information loss
+100% Local Processing: Complete privacy, no data transmission 
+Mathematical Intelligence: Quantitative analysis guides optimal context selection Model 
+Flexibility: Easy switching between Ollama models for different needs 
+Sales-Optimized: Designed specifically for sales meeting analysis patterns 
+Token Efficiency: Fits relevant context within LLM limits without information loss
 
-Troubleshooting Preprocessing fails: Ensure Ollama is running with ollama serve No processed data: Run python preprocess.py before launching app Empty responses: Verify .txt files exist in data/transcripts/ Model errors: Check Ollama model is pulled with ollama list Import errors: Install all dependencies with pip install command above
+# Troubleshooting
+Preprocessing fails: Ensure Ollama is running with ollama serve 
+
+No processed data: Run python preprocess.py before launching app 
+
+Empty responses: Verify .txt files exist in data/transcripts/ 
+
+Model errors: Check Ollama model is pulled with ollama list 
+
+Import errors: Install all dependencies with pip install command above
+
 ## Sample Use Cases
 
 Below are some sample use cases demonstrating the system in action:
