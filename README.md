@@ -238,3 +238,22 @@ No processed data: Run python preprocess.py before launching app
 Empty responses: Verify .txt files exist in data/transcripts/
 Model errors: Check Ollama model is pulled with ollama list
 Import errors: Install all dependencies with pip install command above
+
+
+
+
+## Sample Use Cases
+
+Below are some sample use cases demonstrating the system in action:
+
+[Sample Query 1](images/img1.png)
+
+[Sample Query 2](images/img2.png)
+
+[Sample Query 3](images/img3.png)
+
+[Sample Query 4](images/img4.png)
+
+[Sample Query 5](images/img5.png)
+
+[Sample Query 6](images/img6.png)
