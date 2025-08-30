@@ -36,7 +36,7 @@ def initialize_session_state():
 
 def load_data_and_model():
     """Load processed data and initialize model"""
-    st.sidebar.title("🔧 Configuration")
+    st.sidebar.title(" Configuration")
     
     model_options = {name: config["description"] for name, config in MODEL_CONFIGS.items()}
     selected_model = st.sidebar.selectbox(
@@ -61,7 +61,7 @@ def load_data_and_model():
         st.sidebar.info("Run preprocessing first: `python preprocess.py`")
         return None, None
     
-    if st.sidebar.button("🔄 Load Data"):
+    if st.sidebar.button(" Load Data"):
         with st.spinner("Loading data and initializing model..."):
             try:
                 processed_data = load_processed_data(data_path)
@@ -76,10 +76,10 @@ def load_data_and_model():
                 st.session_state.query_engine = query_engine
                 st.session_state.chat_history = []
                 
-                st.success(f"✅ Loaded {len(processed_data)} meetings with {query_engine.llm.get_model_info()['description']}")
+                st.success(f" Loaded {len(processed_data)} meetings with {query_engine.llm.get_model_info()['description']}")
                 
             except Exception as e:
-                st.error(f"❌ Setup failed: {str(e)}")
+                st.error(f"Setup failed: {str(e)}")
                 return None, None
     
     return st.session_state.processed_data, st.session_state.query_engine
@@ -148,7 +148,7 @@ def main():
         # Chat input - MOVED OUTSIDE OF TABS
         if prompt := st.chat_input("Ask about your sales calls..."):
             if not st.session_state.query_engine:
-                st.error("⚠️ Please load data first using the sidebar")
+                st.error("Please load data first using the sidebar")
             else:
                 # Add user message to chat
                 timestamp = datetime.now().strftime("%H:%M:%S")
