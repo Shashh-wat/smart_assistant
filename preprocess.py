@@ -30,7 +30,7 @@ class TranscriptPreprocessor:
         transcript_files = glob.glob(os.path.join(input_dir, "*.txt"))
         
         if not transcript_files:
-            print(f"❌ No .txt files found in {input_dir}")
+            print(f" No .txt files found in {input_dir}")
             return
         
         print(f"📁 Found {len(transcript_files)} transcript files")
@@ -38,14 +38,14 @@ class TranscriptPreprocessor:
         processed_data = {}
         for i, file_path in enumerate(transcript_files):
             meeting_id = f"meeting_{i+1:03d}"
-            print(f"\n🔄 Processing {os.path.basename(file_path)} as {meeting_id}...")
+            print(f"\n Processing {os.path.basename(file_path)} as {meeting_id}...")
             
             processed_data[meeting_id] = self.process_single_transcript(file_path, meeting_id)
         
         # Save all processed data
         output_file = os.path.join(PROCESSED_DIR, "all_meetings.json")
         save_processed_data(processed_data, output_file)
-        print(f"\n✅ All transcripts processed! Saved to {output_file}")
+        print(f"\n All transcripts processed! Saved to {output_file}")
         
         return processed_data
     
@@ -59,11 +59,11 @@ class TranscriptPreprocessor:
         
         # Stage 1: LLM Semantic Extraction
         semantic_data = self.extract_semantic_data(raw_text)
-        print(f"   🧠 Semantic extraction: Complete")
+        print(f"    Semantic extraction: Complete")
         
         # Stage 2: Mathematical Analysis
         math_metadata = self.math_analyzer.analyze_transcript(raw_text, semantic_data)
-        print(f"   📊 Mathematical analysis: Complete")
+        print(f"   Mathematical analysis: Complete")
         
         # Stage 3: Create structured output
         processed_result = {
