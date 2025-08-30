@@ -15,11 +15,11 @@ def create_directories(dir_paths: List[str]):
     for dir_path in dir_paths:
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
-            print(f"📁 Created directory: {dir_path}")
+            print(f" Created directory: {dir_path}")
         else:
             # Check if it's a file instead of directory
             if os.path.isfile(dir_path):
-                print(f"⚠️ {dir_path} exists as file, removing...")
+                print(f" {dir_path} exists as file, removing...")
                 os.remove(dir_path)
                 os.makedirs(dir_path)
                 print(f"📁 Created directory: {dir_path}")
@@ -222,10 +222,10 @@ def load_processed_data(data_path: str) -> Dict[str, Any]:
             return data
             
     except FileNotFoundError:
-        print(f"❌ File not found: {data_path}")
+        print(f" File not found: {data_path}")
         return {}
     except json.JSONDecodeError as e:
-        print(f"❌ Invalid JSON: {e}")
+        print(f" Invalid JSON: {e}")
         return {}
 
 
@@ -325,12 +325,12 @@ def validate_processed_data(processed_data: Dict[str, Any]) -> Dict[str, Any]:
 def generate_data_report(processed_data: Dict[str, Any]) -> str:
     """Generate comprehensive data report"""
     if not processed_data:
-        return "📭 No processed data available"
+        return " No processed data available"
     
     report_sections = []
     
     # Basic statistics
-    report_sections.append(f"📊 **Dataset Overview**")
+    report_sections.append(f" **Dataset Overview**")
     report_sections.append(f"   Total Meetings: {len(processed_data)}")
     
     # Validation report
@@ -401,7 +401,7 @@ def export_summary_csv(processed_data: Dict[str, Any], output_path: str):
                 
                 writer.writerow(row)
         
-        print(f"📊 Exported summary CSV to {output_path}")
+        print(f" Exported summary CSV to {output_path}")
         
     except Exception as e:
         print(f"❌ Failed to export CSV: {e}")
@@ -409,7 +409,7 @@ def export_summary_csv(processed_data: Dict[str, Any], output_path: str):
 
 def main():
     """Test data utilities"""
-    print("🧪 Testing data utilities...")
+    print(" Testing data utilities...")
     
     # Test directory creation
     test_dirs = ['test_output', 'test_output/subdir']
@@ -420,7 +420,7 @@ def main():
     if os.path.exists('test_output'):
         shutil.rmtree('test_output')
     
-    print("✅ Data utilities tests passed")
+    print(" Data utilities tests passed")
 
 
 if __name__ == "__main__":
