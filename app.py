@@ -57,7 +57,7 @@ def load_data_and_model():
         )
         data_path = os.path.join(PROCESSED_DIR, selected_file)
     else:
-        st.sidebar.error("❌ No processed data found!")
+        st.sidebar.error(" No processed data found!")
         st.sidebar.info("Run preprocessing first: `python preprocess.py`")
         return None, None
     
