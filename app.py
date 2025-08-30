@@ -179,7 +179,7 @@ def main():
                             })
                             
                         except Exception as e:
-                            error_msg = f"❌ Error processing query: {str(e)}"
+                            error_msg = f"Error processing query: {str(e)}"
                             st.error(error_msg)
                             st.session_state.chat_history.append({
                                 "role": "assistant",
