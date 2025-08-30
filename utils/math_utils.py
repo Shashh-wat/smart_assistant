@@ -263,7 +263,7 @@ class MathematicalAnalyzer:
             }
             
         except Exception as e:
-            print(f"   ⚠️ Clustering failed: {e}")
+            print(f"    Clustering failed: {e}")
             return {
                 "cluster_assignments": [],
                 "cluster_topics": {},
@@ -515,7 +515,7 @@ def main():
     analyzer = MathematicalAnalyzer()
     
     if args.test_file:
-        print(f"🧮 Analyzing {args.test_file}...")
+        print(f" Analyzing {args.test_file}...")
         
         with open(args.test_file, 'r', encoding='utf-8') as f:
             text = f.read()
@@ -530,16 +530,16 @@ def main():
         }
         
         results = analyzer.analyze_transcript(text, semantic_data)
-        print("📊 Mathematical Analysis Results:")
+        print(" Mathematical Analysis Results:")
         print(json.dumps(results, indent=2))
         
         # Additional complexity analysis
         complexity = analyzer.calculate_conversation_complexity(text, semantic_data)
-        print("\n🧠 Conversation Complexity:")
+        print("\n Conversation Complexity:")
         print(json.dumps(complexity, indent=2))
         
     elif args.test:
-        print("🧪 Running basic mathematical analysis tests...")
+        print(" Running basic mathematical analysis tests...")
         
         # Test with sample text
         sample_text = """
@@ -560,12 +560,12 @@ def main():
         
         results = analyzer.analyze_transcript(sample_text, sample_semantic)
         
-        print("✅ Speaker Analysis:", json.dumps(results["speaker_analysis"], indent=2))
-        print("✅ Content Density:", json.dumps(results["content_density"], indent=2))
-        print("✅ Topic Importance:", json.dumps(results["topic_importance"], indent=2))
+        print(" Speaker Analysis:", json.dumps(results["speaker_analysis"], indent=2))
+        print(" Content Density:", json.dumps(results["content_density"], indent=2))
+        print(" Topic Importance:", json.dumps(results["topic_importance"], indent=2))
         
     else:
-        print("💡 Usage:")
+        print(" Usage:")
         print("  python utils/math_utils.py --test")
         print("  python utils/math_utils.py --test-file data/transcripts/sample.txt")
 
