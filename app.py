@@ -94,7 +94,7 @@ def display_data_overview():
         st.info(summary)
         
         for meeting_id, meeting_data in st.session_state.processed_data.items():
-            with st.expander(f"🎯 {meeting_id.upper()} Details"):
+            with st.expander(f" {meeting_id.upper()} Details"):
                 col1, col2 = st.columns(2)
                 
                 with col1:
@@ -165,7 +165,7 @@ def main():
                 
                 # Generate response
                 with st.chat_message("assistant"):
-                    with st.spinner("🧠 Analyzing..."):
+                    with st.spinner(" Analyzing..."):
                         try:
                             response = st.session_state.query_engine.process_query(prompt)
                             st.write(response)
@@ -189,7 +189,7 @@ def main():
         
         # Tab content
         with tab1:
-            st.subheader("💡 Sample Queries")
+            st.subheader(" Sample Queries")
             col1, col2 = st.columns(2)
             
             with col1:
