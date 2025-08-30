@@ -136,7 +136,7 @@ def main():
     
     if processed_data:
         # Create tabs for different views
-        tab1, tab2 = st.tabs(["💬 Chat", "📊 Data Overview"])
+        tab1, tab2 = st.tabs([" Chat", " Data Overview"])
         
         # Display chat history
         for message in st.session_state.chat_history:
