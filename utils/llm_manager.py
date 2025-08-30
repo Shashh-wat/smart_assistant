@@ -11,16 +11,12 @@ class LLMManager:
     
     def setup_model(self):
         try:
-            if self.config["type"] == "ollama":
-                if self._test_ollama_connection():
-                    print(f"Using {self.config['description']}")
-                    return
-                else:
-                    print("Ollama not available, trying API fallback...")
-                    self._try_fallback()
-            elif self.config["type"] == "huggingface_api":
+            if self._test_ollama_connection():
                 print(f"Using {self.config['description']}")
                 return
+            else:
+                print("Primary model not available, trying fallback...")
+                self._try_fallback()
         except Exception as e:
             print(f"Model setup failed: {e}")
             self._try_fallback()
@@ -41,23 +37,16 @@ class LLMManager:
             try:
                 self.current_model = fallback_model
                 self.config = MODEL_CONFIGS[fallback_model]
-                if self.config["type"] == "ollama":
-                    if self._test_ollama_connection():
-                        print(f"Using fallback: {self.config['description']}")
-                        return
-                elif self.config["type"] == "huggingface_api":
+                if self._test_ollama_connection():
                     print(f"Using fallback: {self.config['description']}")
                     return
             except Exception:
                 continue
-        raise Exception("No working models available")
+        raise Exception("No working Ollama models available")
     
     def generate(self, prompt, max_tokens=500):
         try:
-            if self.config["type"] == "ollama":
-                return self._ollama_generate(prompt, max_tokens)
-            elif self.config["type"] == "huggingface_api":
-                return self._huggingface_api_generate(prompt, max_tokens)
+            return self._ollama_generate(prompt, max_tokens)
         except Exception as e:
             return f"Generation failed: {str(e)}"
     
@@ -79,53 +68,6 @@ class LLMManager:
             return response.json()["response"]
         else:
             raise Exception(f"Ollama API error: {response.status_code}")
-    
-    def _huggingface_api_generate(self, prompt, max_tokens):
-        payload = {
-            "inputs": prompt,
-            "parameters": {
-                "max_new_tokens": max_tokens,
-                "temperature": 0.7,
-                "do_sample": True,
-                "return_full_text": False
-            }
-        }
-        
-        max_retries = 3
-        for attempt in range(max_retries):
-            try:
-                response = requests.post(
-                    self.config["api_url"],
-                    headers={"Content-Type": "application/json"},
-                    json=payload,
-                    timeout=60
-                )
-                
-                if response.status_code == 503:
-                    print(f"Model loading, waiting 15 seconds... (attempt {attempt + 1})")
-                    time.sleep(15)
-                    continue
-                
-                if response.status_code == 200:
-                    result = response.json()
-                    if isinstance(result, list) and len(result) > 0:
-                        generated_text = result[0].get("generated_text", "")
-                        return generated_text
-                    elif isinstance(result, dict):
-                        return result.get("generated_text", str(result))
-                    else:
-                        return str(result)
-                else:
-                    print(f"HF API returned {response.status_code}: {response.text}")
-                    if attempt == max_retries - 1:
-                        raise Exception(f"HF API error: {response.status_code}")
-            except requests.exceptions.Timeout:
-                print(f"Request timeout (attempt {attempt + 1})")
-                if attempt == max_retries - 1:
-                    raise Exception("HF API timeout")
-                time.sleep(5)
-        
-        raise Exception("HF API failed after retries")
     
     def get_model_info(self):
         return {
